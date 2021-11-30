@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after{
+  //margin: 0;
+  //padding: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+picture,
+figure{
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p{
+  font-weight: 400;
+}
+
+//
+
+body{
+  font-family: $sans-norm;
+  font-size: $fs-400;
+  color: $clr-light;
+  background: $clr-dark;
+  min-height: 100vh;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  overflow-x: hidden;
+}
+
+//make img easier to wrok with
+img,
+picture{
+  max-width: 100%;
+  //display: block;
+}
+
+//as input,button,textarea,select doesn't inherit the font properties
+input,
+button,
+textarea,
+select{
+  font: inherit;
+}
+
+//remove animation for people who have turnes off them
+@media (prefers-reduced-motion: reduce){
+  *,
+  *::before,
+  *::after{
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}

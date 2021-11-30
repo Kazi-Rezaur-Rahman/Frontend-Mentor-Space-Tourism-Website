@@ -1,0 +1,36 @@
+.lg-btn{
+  position: relative;
+  z-index: 1;
+  display: inline-grid;
+  place-content: center;
+  padding: 0 2em;
+  border-radius: 50%;
+  //height: 100px;
+  //width: 100px;
+  aspect-ratio:1;//in modern css we don't need to write width and height. We can just write ASPECT RATIO instead of that. 1/2 means width is twice of the height and 2/1 means height is twice of the width.1means perfect SQUARE.
+  text-decoration: none;
+  /*@include sm{
+    padding: 0 1em;
+  }
+  @include sm{
+    padding: 0 0.5em;
+  }*/
+}
+.lg-btn::after{
+  position: absolute;
+  z-index: -1;
+  content: "";
+  background: $clr-accent-extra-light;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.5s linear, transform 0.75s cubic-bezier(.17,.67,.83,.67);
+}
+
+
+.lg-btn:hover::after,
+.lg-btn:focus::after{
+  opacity: 1;
+  transform: scale(1.5);
+}
